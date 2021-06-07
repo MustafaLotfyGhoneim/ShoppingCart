@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Application xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ShoppingCart.App">
+    <Application.Resources>
+        <Color x:Key="BackgroundColor">#fd553b</Color>
+        <Color x:Key="HeaderColor">#49c175</Color>
+        <Color x:Key="GrayColor">#999BAC</Color>
+        <Color x:Key="BlackColor">#090909</Color>
+        <Color x:Key="GreenColor">#2DA050</Color>
+        <Color x:Key="SkyColor">#D4F1F0</Color>
+        <Color x:Key="CloudySkyColor">#90DBD5</Color>
+        <Color x:Key="WhiteColor">#FFFFFF</Color>
+        <Color x:Key="LightGray">#C6C6C6</Color>
+
+        <Style TargetType="ContentPage" ApplyToDerivedTypes="True">
+            <Setter Property="NavigationPage.HasNavigationBar" Value="False"/>
+        </Style>
+    </Application.Resources>
+</Application>

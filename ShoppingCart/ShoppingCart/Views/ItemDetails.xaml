@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ShoppingCart.Views.ItemDetails"
+             xmlns:common="clr-namespace:ShoppingCart.Common"
+             xmlns:vm="clr-namespace:ShoppingCart.ViewModels"
+             xmlns:PanCake="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+             xmlns:xct="http://xamarin.com/schemas/2020/toolkit">
+    <ContentPage.BindingContext>
+        <vm:ShoppingCartViewModel x:Name="ViewModel"/>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+
+        <StackLayout BackgroundColor="{StaticResource BackgroundColor}"
+                  VerticalOptions="FillAndExpand"
+                  Spacing="0">
+
+            <!--Hearder -->
+            <StackLayout Grid.Column="0" Grid.Row="0"
+                             BackgroundColor="White">
+                <PanCake:PancakeView Grid.Row="0" CornerRadius="0,0,90,0"
+                                         BackgroundColor="{StaticResource SkyColor}"
+                                         VerticalOptions="FillAndExpand">
+                    <Grid RowDefinitions="Auto,Auto"
+                          ColumnDefinitions="*,Auto"
+                          HorizontalOptions="FillAndExpand"
+                          VerticalOptions="FillAndExpand"
+                          Padding="20,30,10,20"
+                          HeightRequest="200">
+                        <Image Grid.Row="0" Grid.Column="0" Source="Deer" Aspect="AspectFit" />
+                        <Frame Grid.Column="1" Grid.Row="0" Grid.RowSpan="2"
+                                    VerticalOptions="Start" 
+                                    BackgroundColor="{StaticResource CloudySkyColor}" 
+                                    HorizontalOptions="End" 
+                                    HeightRequest="20" 
+                                    WidthRequest="20" 
+                                    CornerRadius="40">
+                            <Image>
+                                <Image.Source>
+                                    <FontImageSource Glyph="{x:Static common:IconFontValues.ShoppingOutline}"
+                                                         Color="{StaticResource BlackColor}"
+                                                         FontFamily="IconsFont"
+                                                         Size="20" />
+                                </Image.Source>
+                            </Image>
+                        </Frame>
+                        <Button Grid.Column="1" Grid.Row="0" Grid.RowSpan="2" 
+                                    VerticalOptions="Start" 
+                                    BackgroundColor="White" 
+                                    HorizontalOptions="End" 
+                                    HeightRequest="26" 
+                                    WidthRequest="26" 
+                                    CornerRadius="13" 
+                                    Text="1"
+                                    FontFamily="{xct:Translate BoldFont}"
+                                    FontSize="15" 
+                                    TextColor="Red" 
+                                    Margin="-5"
+                                    Padding="-5"/>
+
+                    </Grid>
+
+                </PanCake:PancakeView>
+
+            </StackLayout>
+
+            <!--Item Details-->
+            <StackLayout Margin="0,0,0,0"
+                         VerticalOptions="FillAndExpand">
+                <PanCake:PancakeView  BackgroundColor="{StaticResource SkyColor}"
+                                      CornerRadius="0,0,40,40">
+                    <PanCake:PancakeView BackgroundColor="White"
+                                         CornerRadius="0,90,40,40"
+                                 Padding="5,0">
+                        <StackLayout VerticalOptions="FillAndExpand"
+                                          HorizontalOptions="FillAndExpand"
+                                     Padding="15,30,5,50"
+                                     Spacing="-5">
+                            <Label  VerticalTextAlignment="Center" 
+                                           Text="Flussmonger" 
+                                           TextColor="{StaticResource LightGray}"
+                                           FontSize="20"
+                                           FontFamily="{xct:Translate BoldFont}"/>
+                            <Label Text="Reindeer Teddy Bear&#10;with Chocolates " 
+                                           TextColor="{StaticResource BlackColor}"
+                                           FontSize="30"
+                                    LineHeight="0.75"
+                                           FontFamily="{xct:Translate BoldFont}"/>
+                            <Label Text="$70.99" 
+                                           TextColor="{StaticResource GreenColor}"
+                                           FontSize="30"
+                                           FontFamily="{xct:Translate BoldFont}"/>
+                            <Label Text="A children's favorite is brought to life with the Rudolph animated plush, a cute, collectible frien with red and black buffalo plaid print on his scarf ans inside his ears." 
+                                           TextColor="{StaticResource GrayColor}"
+                                   LineHeight="0.75"
+                                           FontSize="20"
+                                           FontFamily="{xct:Translate NormalFont}"/>
+                        </StackLayout>
+                    </PanCake:PancakeView>
+                </PanCake:PancakeView>
+            </StackLayout>
+            
+            <!--Add To Cart-->
+            <StackLayout  Margin="0" 
+                          BackgroundColor="{StaticResource BackgroundColor}"
+                          HorizontalOptions="CenterAndExpand">
+
+                <Button x:Name="AddToCartButton"
+                    VerticalOptions="Center" 
+                        BackgroundColor="White" 
+                        Text="Add to Cart" 
+                        TextColor="Black" 
+                        CornerRadius="20" 
+                        Margin="10,10,30,30" 
+                        WidthRequest="290" 
+                        FontSize="17" 
+                        FontAttributes="Bold"
+                        HeightRequest="55"
+                        Clicked="AddToCartButton_Clicked"
+                        />
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
